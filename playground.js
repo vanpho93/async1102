@@ -27,6 +27,11 @@ const div = (a, b, cb) => {
         cb(undefined, a / b);
     }, 1000);
 };
+
+const getSquare = (dai, rong, cao, cb) => {
+
+}; 
+
 // add(4, 5, (err, result) => {
 //     if (err) return console.log(`${err} `);
 //     console.log(result);
