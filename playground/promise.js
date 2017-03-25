@@ -50,6 +50,6 @@ const getSquare = (dai, rong, cao) => (
     .then(res => div(res, 2))
 );
 
-getSquare(4, 5, 6)
-.then(square => console.log(square));
-
+getSquare(4, '5', 6)
+.then(square => console.log(square))
+.catch(err => console.log(err + ''));
