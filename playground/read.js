@@ -23,8 +23,14 @@ const write = (data, filename) => (
     })
 );
 
-read('./a.txt')
-.then(data => write(data, './b.txt'))
+
+
+const copyFile = (entry, output) => (
+    read(entry)
+    .then(data => write(data, output))
+);
+
+copyFile('./a.txt', './b.txt')
 .then(() => console.log('THANH_CONG'));
 
 // read('./a.txt2')

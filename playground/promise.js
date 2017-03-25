@@ -39,7 +39,17 @@ const div = (a, b) => (
     })
 );
 
-add(4, 5)
-.then(res => mul(res, 6))
-.then(result => div(result, 2))
+// add(4, 5)
+// .then(res => mul(res, 6))
+// .then(result => div(result, 2))
+// .then(square => console.log(square));
+
+const getSquare = (dai, rong, cao) => (
+    add(dai, rong)
+    .then(total => mul(total, cao))
+    .then(res => div(res, 2))
+);
+
+getSquare(4, 5, 6)
 .then(square => console.log(square));
+
