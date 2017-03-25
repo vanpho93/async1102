@@ -17,8 +17,29 @@ const add = (a, b) => (
     })
 );
 
+const mul = (a, b) => (
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (typeof a !== 'number' || typeof b !== 'number') {
+                return reject(new Error('Tham so phai co kieu number'));
+             }
+            resolve(a * b);
+        }, 1000);
+    })
+);
+
+const div = (a, b) => (
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (typeof a !== 'number' || typeof b !== 'number') {
+                return reject(new Error('Tham so phai co kieu number'));
+             }
+            resolve(a / b);
+        }, 1000);
+    })
+);
+
 add(4, 5)
-.then(res => console.log(res))
-.catch(err => console.log(err));
-
-
+.then(res => mul(res, 6))
+.then(result => div(result, 2))
+.then(square => console.log(square));

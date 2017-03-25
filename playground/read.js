@@ -14,6 +14,10 @@ const read = (filename) => (
     })
 );
 
+const write = (data, filename) => (
+    new Promise();
+);
+
 read('./a.txt2')
 .then(res => console.log(res))
 .catch(err => console.log(err + ''));
