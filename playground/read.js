@@ -15,9 +15,22 @@ const read = (filename) => (
 );
 
 const write = (data, filename) => (
-    new Promise();
+    new Promise((resolve, reject) => {
+        fs.writeFile(filename, data, 'utf8', err => {
+            if (err) return reject(err);
+            resolve();
+        });
+    })
 );
 
-read('./a.txt2')
-.then(res => console.log(res))
-.catch(err => console.log(err + ''));
+read('./a.txt')
+.then(data => write(data, './b.txt'))
+.then(() => console.log('THANH_CONG'));
+
+// read('./a.txt2')
+// .then(res => console.log(res))
+// .catch(err => console.log(err + ''));
+
+// write('123 dasfjda', './b.txt')
+// .then(() => console.log('THANH_CONG'))
+// .catch(err => console.log(err + ''));
