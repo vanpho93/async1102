@@ -1,7 +1,7 @@
 
-let pg = require('pg');
+const pg = require('pg');
 
-let config = {
+const config = {
   user: 'postgres',
   database: 'NODE1102',
   password: 'khoapham',
@@ -11,7 +11,7 @@ let config = {
   idleTimeoutMillis: 10000
 };
 
-let pool = new pg.Pool(config);
+const pool = new pg.Pool(config);
 
 const query = (sql, arrayData) => (
     new Promise((resolve, reject) => {

@@ -1,6 +1,29 @@
 <html>
     <head>
         <title>Async</title>
+        <script>
+            const add = (a, b) => (
+                new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        if (typeof a !== 'number' || typeof b !== 'number') {
+                            return reject(new Error('Tham so phai co kieu number'));
+                        }
+                        resolve(a + b);
+                    }, 3000);
+                })
+            );
+            const a = add(4, 5)
+            .then(total => (total * 2))
+
+            setTimeout(() => console.log(a),3500);
+
+            console.log(a);
+
+            //function trong cau lenh tra ve 1 promise
+            //function trong then, tra 1 gia tri
+            //resolved, gia tri
+
+        </script>
     </head>
     <body>
         <h3>Khoa Pham Training</h3>
