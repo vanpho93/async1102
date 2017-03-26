@@ -23,6 +23,12 @@ const write = (data, filename) => (
     })
 );
 
+/*
+    table date: id, ngay
+    table tuoi: id, namsinh, canchi
+    table idNgay, idTuoi, desc
+*/
+
 
 
 const copyFile = (entry, output) => (
